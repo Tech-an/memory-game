@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { CardProps } from "@/components/sato2/card_type";
+import { CardProps } from "@/components/card_type";
 
 const marks = ["hearts", "diamonds", "spades", "clubs"];
 const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
