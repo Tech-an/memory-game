@@ -9,6 +9,7 @@ const cards = marks.map(mark => numbers.map(number => {
     return {...data, index}
 })
 
+
 export const allCardState = atom<CardProps[]>({
     key: 'allCardState',
     default: cards,
