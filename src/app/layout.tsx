@@ -1,12 +1,9 @@
 "use client";
 import { RecoilRoot } from "recoil";
 import './globals.css'
-import { Inter } from 'next/font/google'
 import React from "react";
 import StyledComponentsRegistry from "@/libs/registry";
-import { Metadata } from 'next'
-
-const inter = Inter({ subsets: ['latin'] })
+import Head from "next/head";
 
 
 export default function RootLayout({
@@ -16,9 +13,14 @@ export default function RootLayout({
 }) {
   return (
     <RecoilRoot>
-      <html lang="en">
+      <html lang="ja">
+          <head>
+              <meta name="robots" content="noindex"/>
+              <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+              <title>神経衰弱</title>
+          </head>
           <StyledComponentsRegistry>
-              <body className={inter.className}>{children}</body>
+              <body>{children}</body>
           </StyledComponentsRegistry>
       </html>
     </RecoilRoot>

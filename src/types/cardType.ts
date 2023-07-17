@@ -4,5 +4,4 @@ export type CardProps = {
     imgPath: string;
     isTurned: boolean;
     isMatched: boolean;
-    index: number;
 };
