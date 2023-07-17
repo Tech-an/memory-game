@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import {CardProps} from "@/components/sato2/card_type";
+import { CardProps } from "@/components/sato2/card_type";
 
 const marks = ["hearts", "diamonds", "spades", "clubs"];
 const numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13];
@@ -8,11 +8,6 @@ const cardData = marks.map(mark => numbers.map(number => {
 })).flat().sort(() => Math.random() - 0.5).map((data, index) => {
     return {...data, index}
 })
-// const cardData = marks.map(mark => numbers.map(number => {
-//     return {number, mark, imgPath: `${number}_of_${mark}`, isTurned: false, isMatched: false}
-// })).flat().map((data, index) => {
-//     return {...data, index}
-// })
 
 export const allCardState = atom<CardProps[]>({
     key: 'allCardState',
@@ -22,9 +17,4 @@ export const allCardState = atom<CardProps[]>({
 export const clickedCardIndexState = atom<number>({
     key: 'clickedCardIndex',
     default: -1
-})
-
-export const stockCardState = atom<CardProps[]>({
-    key: 'stockCardState',
-    default: [],
 })
