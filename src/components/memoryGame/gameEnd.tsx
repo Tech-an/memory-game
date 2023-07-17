@@ -6,11 +6,13 @@ type Props = {
     isGiveUp: boolean,
     time: number,
     wrongNum: number
+    stopTimer: ()=>void
 }
 
 // eslint-disable-next-line react/display-name
-export const GameEnd = memo<Props>(({ isEnd, isGiveUp, time, wrongNum }) => {
+export const GameEnd = memo<Props>(({ isEnd, isGiveUp, time, wrongNum, stopTimer }) => {
     if (!isEnd) return null;
+    stopTimer()
     return (
         <Container>
             {isGiveUp ? (
