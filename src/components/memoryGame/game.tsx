@@ -64,7 +64,7 @@ export const MemoryGame = () => {
             wrongNum: gameState.wrongNum + 1,
             result: false
         })
-        setTimeout(()=>turn(i, false), 500)
+        setTimeout(()=>turn(i, false), 800)
     }
 
     const reset = () => {
@@ -76,7 +76,7 @@ export const MemoryGame = () => {
 
     const stopTimer = () => clearInterval(timer);
 
-    const clickHandler = async (i: number) => {
+    const clickHandler = (i: number) => {
         if (!gameState.isStart) start()
         if (hasOpen(i) || gameState.isPause) return
         turn(i, true)
@@ -88,7 +88,7 @@ export const MemoryGame = () => {
             } else {
                 wrong(i)
             }
-            setTimeout(() => reset(), 500)
+            setTimeout(() => reset(), 800)
         }
     }
 
@@ -110,7 +110,8 @@ export const MemoryGame = () => {
     }
 
     const giveUp = () => {
-        setGameState({isGiveUp: confirm("諦めてよろしいですか？")})
+        if (!confirm("諦めてよろしいですか？")) return
+        setGameState({isGiveUp: true})
         allOpen()
     }
 
@@ -132,6 +133,9 @@ export const MemoryGame = () => {
             <GameEnd isEnd={isEnd()} isGiveUp={gameState.isGiveUp} time={time} wrongNum={gameState.wrongNum} stopTimer={stopTimer}/>
             <GameContainer allCard={allCard} isPause={gameState.isPause} cardClickHandler={clickHandler} />
             <GameController isPause={gameState.isPause} resume={resume} pause={pause} giveUp={giveUp} result={gameState.result} time={time} />
+            {/*  引数名={引数}  */}
+            {/*<GameController giveUp={() => giveUp()} />*/}
+            {/*<GameController giveUp={giveUp} />*/}
         </Container>
     );
 }

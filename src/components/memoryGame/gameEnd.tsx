@@ -32,6 +32,30 @@ export const GameEnd = memo<Props>(({ isEnd, isGiveUp, time, wrongNum, stopTimer
     );
 })
 
+
+// TODO 13-33行目のコードは以下のコードでも問題なし。
+// export function GameEnd ({ isEnd, isGiveUp, time, wrongNum, stopTimer }: Props) {
+//     if (!isEnd) return null;
+//     stopTimer()
+//     return (
+//         <Container>
+//             {isGiveUp ? (
+//                 <p>またチェレンジしてくださいね！</p>
+//             ) : (
+//                 <div>
+//                     <p>クリアです。おめでとうございます！</p>
+//                     <p>クリアタイム{time}秒</p>
+//                     <br />
+//                     <p>間違えた回数は{wrongNum}回です</p>
+//                     <p>{wrongNum < 30 ? "素晴らしい！" : "次は頑張りましょう！"}</p>
+//                 </div>
+//             )}
+//             <br />
+//             <a href='/'>もう一度やる！</a>
+//         </Container>
+//     );
+// }
+
 const Container = styled.div`
   position: absolute;
   width: 30%;

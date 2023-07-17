@@ -3,7 +3,6 @@ import { RecoilRoot } from "recoil";
 import './globals.css'
 import React from "react";
 import StyledComponentsRegistry from "@/libs/registry";
-import Head from "next/head";
 
 
 export default function RootLayout({
