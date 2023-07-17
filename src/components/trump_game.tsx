@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useRecoilState } from 'recoil';
-import {allCardState, clickedCardIndexState} from '@/components/sato2/card_state';
+import {allCardState, clickedCardIndexState} from '@/components/card_state';
 import styled from "styled-components";
 import Image from 'next/image';
-import {CardProps} from "@/components/sato2/card_type";
+import {CardProps} from "@/components/card_type";
 
 
 export default function TrumpGame() {
