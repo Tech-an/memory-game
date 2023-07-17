@@ -110,7 +110,8 @@ export const MemoryGame = () => {
     }
 
     const giveUp = () => {
-        setGameState({isGiveUp: confirm("諦めてよろしいですか？")})
+        if (!confirm("諦めてよろしいですか？")) return
+        setGameState({isGiveUp: true})
         allOpen()
     }
 
@@ -129,7 +130,7 @@ export const MemoryGame = () => {
 
     return (
         <Container>
-            <GameEnd isEnd={isEnd()} isGiveUp={gameState.isGiveUp} time={time} wrongNum={gameState.wrongNum} stopTimer={stopTimer}/>
+            <GameEnd isEnd={isEnd()} isGiveUp={gameState.isGiveUp} time={time} wrongNum={gameState.wrongNum} stopTimer={stopTimer} />
             <GameContainer allCard={allCard} isPause={gameState.isPause} cardClickHandler={clickHandler} />
             <GameController isPause={gameState.isPause} resume={resume} pause={pause} giveUp={giveUp} result={gameState.result} time={time} />
         </Container>
